@@ -1,0 +1,23 @@
+body{
+    text-align: center;
+}
+
+
+h1{
+    padding: 130px;
+    color: red;
+    font-style: oblique;
+}
+
+.clock{
+    background-color: black;
+    color: white;
+    position: fixed;
+    padding: 10px 20px;
+    font-size: 40px;
+    border-radius: 5px;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+
+}

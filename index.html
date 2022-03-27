@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn.iconscout.com/icon/free/png-256/clock-2715944-2257366.png"
+    />
+    <title>Clock</title>
+  </head>
+  <body
+    style="background-image: url(https://wallpaperaccess.com/full/449895.jpg)">
+    <h1>jQuery Digital Clock</h1>
+    <div class="clock" id="clock">00:00:00</div>
+    
+    <script>
+             function showTime(){
+                 var date = new Date();
+                 var h = date.getHours();
+                 var m = date.getMinutes();
+                 var s = date.getSeconds();
+                 var session = "AM";
+
+                 if ( h == 0 ) {
+          h = 12;
+        }
+        if( h >= 12 ){
+           session = "PM";
+           }
+
+        if ( h > 12 ){
+          h = h - 12;
+        }
+        m = ( m < 10 ) ? m = "0" + m : m;
+        s = ( s < 10 ) ? s = "0" + s : s;
+
+        //putting time in one variable
+        var time = h + ":" + m + ":" + s + " " + session;
+        //putting time in our div
+        $('#clock').html(time);
+        //to change time in every seconds
+        setTimeout( showTime, 1000 );
+      }
+      showTime();
+             
+    </script>
+  </body>
+</html>
